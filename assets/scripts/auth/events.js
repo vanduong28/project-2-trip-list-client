@@ -51,9 +51,27 @@ const hideInputFields = function (event) {
 
 const addCity = function (event) {
   console.log('add button clicked')
-  api.createCity()
+  event.preventDefault()
+  const name = document.getElementById('city-input').value
+  const state = document.getElementById('state-input').value
+  const country = document.getElementById('country-input').value
+  console.log(name, state, country)
+  api.createCity(name, state, country)
     .then(ui.createCitySuccess)
     .catch(ui.createCityFailure)
+}
+
+const onGetCities = function (event) {
+  event.preventDefault()
+  console.log('hello')
+  api.getCities()
+    .then(ui.getCitiesSuccess)
+    .catch(ui.getCitiesfailure)
+}
+
+const onDeleteCity = function (event) {
+  event.preventDefault()
+  console.log('remove button clicked')
 }
 
 module.exports = {
@@ -63,5 +81,7 @@ module.exports = {
   changePassword,
   hideButtons,
   hideInputFields,
-  addCity
+  addCity,
+  onGetCities,
+  onDeleteCity
 }

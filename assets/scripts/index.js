@@ -24,4 +24,5 @@ $(() => {
   $('#change-password').on('submit', auth.changePassword)
   $('.add-city-btn').on('click', auth.addCity)
   // ^revisit click vs. submit - click currently works, unsure why submit doesn't
+  $('.view-cities-btn').on('click', auth.onGetCities)
 })

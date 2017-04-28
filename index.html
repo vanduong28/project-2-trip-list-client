@@ -35,6 +35,7 @@
 
   <div class="game-prompt">Sign up or sign in to start planning!</div>
   <div class="sign-in-prompt"></div>
+  <div class="create-city-message"></div>
 
 <!-- City input fields -->
 <div class="form-group" id="city-input-fields">
@@ -59,10 +60,12 @@
 <button type="button" class="add-city-btn btn-primary">Add</button>
 </div>
 
-<!-- list of cities -->
 <div>
-  <ul class="list" id="city-list"></ul>
+<button type="button" class="view-cities-btn btn-primary">View Cities</button>
 </div>
+
+<!-- list of cities populated using handlebars-->
+<div id="content" class="content">list should be here</div>
 
   <!-- Sign Up Modal -->
   <div class="modal fade" id="signUp-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
