@@ -16,20 +16,12 @@ require('./example')
 const auth = require('./auth/events')
 
 $(() => {
-  $('#register-submit').on('click', auth.onSignUp)
-  $('#login-form').on('click', auth.onSignIn)
-  $('#login-form-link').click(function (e) {
-    $('#login-form').delay(100).fadeIn(100)
-    $('#register-form').fadeOut(100)
-    $('#register-form-link').removeClass('active')
-    $(this).addClass('active')
-    e.preventDefault()
-  })
-  $('#register-form-link').click(function (e) {
-    $('#register-form').delay(100).fadeIn(100)
-    $('#login-form').fadeOut(100)
-    $('#login-form-link').removeClass('active')
-    $(this).addClass('active')
-    e.preventDefault()
-  })
+  $(document).ready(auth.hideButtons)
+  $(document).ready(auth.hideInputFields)
+  $('#sign-up').on('submit', auth.onSignUp)
+  $('#sign-in').on('submit', auth.onSignIn)
+  $('#sign-out').on('submit', auth.onSignOut)
+  $('#change-password').on('submit', auth.changePassword)
+  $('.add-city-btn').on('click', auth.addCity)
+  // ^revisit click vs. submit - click currently works, unsure why submit doesn't
 })

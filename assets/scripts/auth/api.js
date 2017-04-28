@@ -1,7 +1,7 @@
 'use strict'
 
 const config = require('../config')
-// const store = require('../store')
+const store = require('../store')
 
 const signUp = (data) => {
   console.log('data is', data)
@@ -19,8 +19,44 @@ const signIn = (data) => {
     data: data
   })
 }
+const signOut = () => {
+  return $.ajax({
+    url: config.apiOrigin + '/sign-out/' + store.user.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const changePassword = (data) => {
+  // console.log('data is ', data)
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
+const createCity = (data) => {
+  console.log('new city created')
+  return $.ajax({
+    url: config.apiOrigin + '/cities',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  signOut,
+  changePassword,
+  createCity
 }

@@ -22,7 +22,46 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  // console.log('sign out ran')
+
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
+const changePassword = function (event) {
+  event.preventDefault()
+  // console.log('change password ran')
+
+  const data = getFormFields(this)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
+const hideButtons = function (event) {
+  $('.hide-on-start').hide()
+}
+const hideInputFields = function (event) {
+  $('#city-input-fields').hide()
+}
+
+const addCity = function (event) {
+  console.log('add button clicked')
+  api.createCity()
+    .then(ui.createCitySuccess)
+    .catch(ui.createCityFailure)
+}
+
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onSignOut,
+  changePassword,
+  hideButtons,
+  hideInputFields,
+  addCity
 }
