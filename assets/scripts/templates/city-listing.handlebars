@@ -1,9 +1,11 @@
 {{#each cities as |city|}}
 
- <ul class='city{{city.id}}'>
+ <!-- <ul class='city{{city.id}}'> -->
+ <ul data-id="{{city.id}}">
   <li>City: {{city.name}}</li>
   <li>State: {{city.state}}</li>
   <li>Country: {{city.country}}</li>
-  <li><button id="removeBtn" data-id="{{city.id}}">Remove</button></li>
+  <!-- <li><button id="removeBtn" data-id="{{city.id}}">Remove</button></li> -->
+  <li><button id="removeBtn">Remove</button></li>
 </ul>
 {{/each}}

@@ -1,6 +1,5 @@
 'use strict'
 const store = require('../store')
-const showCitiesTemplate = require('../templates/city-listing.handlebars')
 
 const signUpSuccess = () => {
   console.log('sign up success')
@@ -27,6 +26,8 @@ const signInSuccess = (data) => {
   $('.sign-in-btn').hide()
   $('.game-message').text(' ')
   $('#city-input-fields').show()
+  $('#view-cities').show()
+  $('.new-city-button').show()
 }
 
 const signInFailure = () => {
@@ -45,6 +46,11 @@ const signOutSuccess = () => {
   $('.sign-up-btn').show()
   $('.sign-in-btn').show()
   $('.new-game-prompt').text('')
+  $('.create-city-message').text('')
+  $('#city-input-fields').hide()
+  $('#view-cities').hide()
+  $('.new-city-button').hide()
+  $('#content').hide()
 }
 
 const signOutFailure = () => {
@@ -61,36 +67,6 @@ const changePasswordFailure = () => {
   $('#changePasswordLabel').text('Invalid password. Try again')
 }
 
-const createCitySuccess = (data) => {
-  console.log('create city success. data is: ', data)
-  // const showCitiesHtml = showCitiesTemplate({ cities: data.city })
-  // $('.content').append(showCitiesHtml)
-  // $('#removeBtn').on('click', hideCityInfo)
-}
-
-const createCityFailure = (error) => {
-  console.log('create city failure. error is:', error)
-  $('.create-city-message').text("'Name' is required")
-}
-
-const getCitiesSuccess = (data) => {
-  console.log(data)
-  const showCitiesHtml = showCitiesTemplate({ cities: data.cities })
-  $('.content').html(showCitiesHtml)
-  $('#removeBtn').on('click', hideCityInfo)
-}
-
-const getCitiesFailure = (error) => {
-  console.log('get cities failure. error is:', error)
-}
-
-const hideCityInfo = () => {
-  event.preventDefault()
-  console.log('remove button clicked')
-  $('[data-id="{{city.id}}"]').remove()
-  // $(this).attr("data-id").remove()
-}
-
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -99,9 +75,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure,
-  createCitySuccess,
-  createCityFailure,
-  getCitiesSuccess,
-  getCitiesFailure
+  changePasswordFailure
 }

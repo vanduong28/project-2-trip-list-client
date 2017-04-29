@@ -14,15 +14,20 @@ $(() => {
 require('./example')
 
 const auth = require('./auth/events')
+const city = require('./city/events')
 
 $(() => {
   $(document).ready(auth.hideButtons)
-  $(document).ready(auth.hideInputFields)
+  $(document).ready(city.hideInputFields)
   $('#sign-up').on('submit', auth.onSignUp)
   $('#sign-in').on('submit', auth.onSignIn)
   $('#sign-out').on('submit', auth.onSignOut)
   $('#change-password').on('submit', auth.changePassword)
-  $('.add-city-btn').on('click', auth.addCity)
-  // ^revisit click vs. submit - click currently works, unsure why submit doesn't
-  $('.view-cities-btn').on('click', auth.onGetCities)
+  $('#city-form').on('submit', city.addCity)
+  $('.view-cities-btn').on('click', city.onGetCities)
+
+  // listen for click events on the remove button for each city entry
+  // does this actually work if the remove button doesn't exist until
+  // handlebars is called?
+  $('#removeBtn').on('submit', city.onDeleteCity)
 })

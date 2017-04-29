@@ -4,6 +4,10 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
 
+const hideButtons = function (event) {
+  $('.hide-on-start').hide()
+}
+
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
@@ -41,47 +45,10 @@ const changePassword = function (event) {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
-
-const hideButtons = function (event) {
-  $('.hide-on-start').hide()
-}
-const hideInputFields = function (event) {
-  $('#city-input-fields').hide()
-}
-
-const addCity = function (event) {
-  console.log('add button clicked')
-  event.preventDefault()
-  const name = document.getElementById('city-input').value
-  const state = document.getElementById('state-input').value
-  const country = document.getElementById('country-input').value
-  console.log(name, state, country)
-  api.createCity(name, state, country)
-    .then(ui.createCitySuccess)
-    .catch(ui.createCityFailure)
-}
-
-const onGetCities = function (event) {
-  event.preventDefault()
-  console.log('hello')
-  api.getCities()
-    .then(ui.getCitiesSuccess)
-    .catch(ui.getCitiesfailure)
-}
-
-const onDeleteCity = function (event) {
-  event.preventDefault()
-  console.log('remove button clicked')
-}
-
 module.exports = {
+  hideButtons,
   onSignUp,
   onSignIn,
   onSignOut,
-  changePassword,
-  hideButtons,
-  hideInputFields,
-  addCity,
-  onGetCities,
-  onDeleteCity
+  changePassword
 }
