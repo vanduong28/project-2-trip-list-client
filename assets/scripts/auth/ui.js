@@ -38,11 +38,10 @@ const signOutSuccess = () => {
   // console.log('signOut success ran. and nothing was returned')
   store.user = null
   $('#signOut-modal').modal('hide')
-  $('.game-board').hide()
+  $('.game-prompt').show()
+  $('.game-prompt').text('Sign up or sign in to start planning!')
   $('.new-game-button').hide()
   $('.hide-on-start').hide()
-  $('.game-prompt').text(' ')
-  $('.game-message').text('Sign up or sign in to start playing!')
   $('.sign-up-btn').show()
   $('.sign-in-btn').show()
   $('.new-game-prompt').text('')
