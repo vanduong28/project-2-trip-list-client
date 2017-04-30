@@ -14,15 +14,27 @@ $(() => {
 require('./example')
 
 const auth = require('./auth/events')
+const city = require('./city/events')
 
 $(() => {
   $(document).ready(auth.hideButtons)
-  $(document).ready(auth.hideInputFields)
+  $(document).ready(city.hideInputFields)
   $('#sign-up').on('submit', auth.onSignUp)
   $('#sign-in').on('submit', auth.onSignIn)
   $('#sign-out').on('submit', auth.onSignOut)
   $('#change-password').on('submit', auth.changePassword)
-  $('.add-city-btn').on('click', auth.addCity)
-  // ^revisit click vs. submit - click currently works, unsure why submit doesn't
-  $('.view-cities-btn').on('click', auth.onGetCities)
+  $('#city-form').on('submit', city.addCity)
+  $('.view-cities-btn').on('click', city.onGetCities)
+  // clear content in modal fields
+  $('#signUp-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
+  $('#signIn-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
+  $('#changePassword-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
+  // listen for click events on the remove button for each city entry
+  $(document).on('click', '.removeBtn', city.onDeleteCity)
 })
