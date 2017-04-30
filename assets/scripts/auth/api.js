@@ -2,8 +2,6 @@
 
 const config = require('../config')
 const store = require('../store')
-const city = require('../city')
-const app = require('../app')
 
 const signUp = (data) => {
   console.log('data is', data)

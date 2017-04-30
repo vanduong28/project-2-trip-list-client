@@ -25,9 +25,16 @@ $(() => {
   $('#change-password').on('submit', auth.changePassword)
   $('#city-form').on('submit', city.addCity)
   $('.view-cities-btn').on('click', city.onGetCities)
-
+  // clear content in modal fields
+  $('#signUp-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
+  $('#signIn-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
+  $('#changePassword-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
   // listen for click events on the remove button for each city entry
-  // does this actually work if the remove button doesn't exist until
-  // handlebars is called?
-  $('#removeBtn').on('submit', city.onDeleteCity)
+  $(document).on('click', '.removeBtn', city.onDeleteCity)
 })

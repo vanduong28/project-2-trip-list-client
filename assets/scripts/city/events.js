@@ -31,7 +31,10 @@ const onGetCities = function (event) {
 const onDeleteCity = function (event) {
   event.preventDefault()
   console.log('remove button clicked')
-  ui.deleteCitySuccess()
+  const cityId = $(this).data('id')
+  api.deleteCity(cityId)
+    .then(ui.deleteCitySuccess(cityId))
+    .catch(ui.deleteCityFailure)
 }
 
 module.exports = {

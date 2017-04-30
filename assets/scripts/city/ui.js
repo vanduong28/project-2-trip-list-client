@@ -16,11 +16,14 @@ const createCityFailure = (error) => {
   $('.create-city-message').text("'Name' is required")
 }
 
-const deleteCitySuccess = () => {
+const deleteCitySuccess = (id) => {
   event.preventDefault()
-  console.log('remove city clicked')
-  $('[data-id="{{city.id}}"]').remove()
-  // $(this).attr("data-id").remove()
+  console.log('remove city clicked. data id:', id)
+  $("div[data-id='" + id + "']").remove()
+}
+
+const deleteCityFailure = () => {
+  console.log('delete city failure.')
 }
 
 const getCitiesSuccess = (data) => {
@@ -38,6 +41,7 @@ module.exports = {
   createCitySuccess,
   createCityFailure,
   deleteCitySuccess,
+  deleteCityFailure,
   getCitiesSuccess,
   getCitiesFailure
 }

@@ -1,9 +1,8 @@
 'use strict'
 
-const config = require('../config')
-const store = require('../store')
-const city = require('../city')
+// const config = require('../config')
 const app = require('../app')
+const store = require('../store')
 
 const createCity = (data) => {
   console.log('new city created. data is:', data)
@@ -27,20 +26,20 @@ const getCities = function () {
   })
 }
 
-// const deleteCity = function () {
-//   return $.ajax({
-//     url: app.host + '/cities', + store.city.id
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const deleteCity = function (id) {
+  return $.ajax({
+    url: app.host + '/cities/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
-// const updateCity = (name, state, country) => {
+// const updateCity = (id, name, state, country) => {
 //   console.log('update city to server.')
 //   return $.ajax({
-//     url: config.apiOrigin + '/cities/' + city.id,
+//     url: app.host + '/cities/' + id,
 //     method: 'PATCH',
 //     headers: {
 //       Authorization: 'Token token=' + store.user.token
@@ -57,7 +56,7 @@ const getCities = function () {
 
 module.exports = {
   createCity,
-  getCities
-  // deleteCity
+  getCities,
+  deleteCity
   // updateCity
 }
