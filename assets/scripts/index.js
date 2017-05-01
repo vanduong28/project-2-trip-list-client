@@ -37,4 +37,6 @@ $(() => {
   })
   // listen for click events on the remove button for each city entry
   $(document).on('click', '.removeBtn', city.onDeleteCity)
+  // listen for click events on the submit update button
+  $(document).on('click', '.city-form-update', city.onUpdateCity)
 })

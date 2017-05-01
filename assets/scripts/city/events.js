@@ -37,9 +37,21 @@ const onDeleteCity = function (event) {
     .catch(ui.deleteCityFailure)
 }
 
+const onUpdateCity = function (event) {
+  event.preventDefault()
+  const cityId = $(this).data('id')
+  console.log('update info button clicked cityId is:', cityId)
+  const updateInfo = getFormFields(this)
+  console.log('updated info:', updateInfo)
+  api.updateCity(updateInfo, cityId)
+    .then(ui.updateCitySuccess(cityId))
+    .catch(ui.updateCityFailure)
+}
+
 module.exports = {
   hideInputFields,
   addCity,
   onGetCities,
-  onDeleteCity
+  onDeleteCity,
+  onUpdateCity
 }

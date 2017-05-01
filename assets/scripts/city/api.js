@@ -36,27 +36,21 @@ const deleteCity = function (id) {
   })
 }
 
-// const updateCity = (id, name, state, country) => {
-//   console.log('update city to server.')
-//   return $.ajax({
-//     url: app.host + '/cities/' + id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: {
-//       'city': {
-//         'name': name,
-//         'state': state,
-//         'country': country
-//       }
-//     }
-//   })
-// }
+const updateCity = (data, id) => {
+  console.log('update city to server.')
+  return $.ajax({
+    url: app.host + '/cities/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
 module.exports = {
   createCity,
   getCities,
-  deleteCity
-  // updateCity
+  deleteCity,
+  updateCity
 }

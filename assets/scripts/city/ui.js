@@ -37,11 +37,21 @@ const getCitiesFailure = (error) => {
   console.log('get cities failure. error is:', error)
 }
 
+const updateCitySuccess = () => {
+  console.log('update city success.')
+}
+
+const updateCityFailure = (error) => {
+  console.log('update city failure. Name is a required field. error is:', error)
+}
+
 module.exports = {
   createCitySuccess,
   createCityFailure,
   deleteCitySuccess,
   deleteCityFailure,
   getCitiesSuccess,
-  getCitiesFailure
+  getCitiesFailure,
+  updateCitySuccess,
+  updateCityFailure
 }

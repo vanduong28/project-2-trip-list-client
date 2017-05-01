@@ -2,24 +2,24 @@
 
   <div data-id="{{city.id}}">
     <p>City: {{city.name}} State: {{city.state}} Country: {{city.country}}</p>
-    <button class="updateBtn" data-id="{{city.id}}" data-toggle="modal" data-target="#updateCity-modal">Update</button>
+    <button class=".updateBtn" data-id="{{city.id}}" data-toggle="modal" data-target="#updateCity-modal{{city.id}}">Update</button>
     <button class="removeBtn" data-id="{{city.id}}">Remove</button>
   </div>
 
-  <div class="modal fade" id="updateCity-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade" id="updateCity-modal{{city.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="update-modal-label">Update</h4>
+          <h4 class="modal-title" class="update-modal-label">Update</h4>
         </div>
         <div class="modal-body">
-          <form id="city-form-update">
+          <form class="city-form-update" data-id="{{city.id}}">
             <div class="form-group">
-              <input type="text" name="city[name]" id="city-input" placeholder="City">
-              <input type="text" name="city[state]" id="state-input" placeholder="State">
-              <input type="text" name="city[country]" id="country-input" placeholder="Country">
-              <input type="submit" name="submit" value="Update info">
+              <input type="text" name="city[name]" id="city-update" placeholder="City (required)">
+              <input type="text" name="city[state]" id="state-update" placeholder="State">
+              <input type="text" name="city[country]" id="country-update" placeholder="Country">
+              <input type="submit" name="submit" value="Update info" data-id="{{city.id}}">
             </div>
           </form>
         </div>
