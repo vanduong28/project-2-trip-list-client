@@ -6,7 +6,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const hideInputFields = function (event) {
   $('#city-input-fields').hide()
-  $('#view-cities').hide()
+  $('.view-cities-button').hide()
   $('.new-city-button').hide()
 }
 

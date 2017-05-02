@@ -26,7 +26,7 @@ const signInSuccess = (data) => {
   $('.sign-in-btn').hide()
   $('.game-message').text(' ')
   $('#city-input-fields').show()
-  $('#view-cities').show()
+  $('.view-cities-button').show()
   $('.new-city-button').show()
 }
 
@@ -47,9 +47,9 @@ const signOutSuccess = () => {
   $('.new-game-prompt').text('')
   $('.create-city-message').text('')
   $('#city-input-fields').hide()
-  $('#view-cities').hide()
+  $('.view-cities-button').hide()
   $('.new-city-button').hide()
-  $('#content').hide()
+  $('#content').empty()
 }
 
 const signOutFailure = () => {

@@ -1,12 +1,13 @@
 {{#each cities as |city|}}
 
   <div data-id="{{city.id}}">
-    <p>City: {{city.name}} State: {{city.state}} Country: {{city.country}}</p>
+    <p>City: {{city.name}} State: {{city.state}} Country: {{city.country}}
     <button class=".updateBtn" data-id="{{city.id}}" data-toggle="modal" data-target="#updateCity-modal{{city.id}}">Update</button>
     <button class="removeBtn" data-id="{{city.id}}">Remove</button>
+    </p>
   </div>
 
-  <div class="modal fade" id="updateCity-modal{{city.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade" id="updateCity-modal{{city.id}}" class="update-city-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -16,10 +17,10 @@
         <div class="modal-body">
           <form class="city-form-update" data-id="{{city.id}}">
             <div class="form-group">
-              <input type="text" name="city[name]" id="city-update" placeholder="City (required)">
-              <input type="text" name="city[state]" id="state-update" placeholder="State">
-              <input type="text" name="city[country]" id="country-update" placeholder="Country">
-              <input type="submit" name="submit" value="Update info" data-id="{{city.id}}">
+              <input type="text" name="city[name]" id="city-update" value="{{city.name}}" placeholder="City (required)" required>
+              <input type="text" name="city[state]" id="state-update" value="{{city.state}}" placeholder="State">
+              <input type="text" name="city[country]" id="country-update" value="{{city.country}}" placeholder="Country">
+              <input type="submit" name="submit" value="Update info" data-id="{{city.id}}" class="submit-update-button">
             </div>
           </form>
         </div>
