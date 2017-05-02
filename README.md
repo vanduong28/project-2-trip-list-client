@@ -1,19 +1,50 @@
 # Project 2 Client
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+## Overview
+WanderList is a Single Page Application that allows a user to create a list of
+city destinations they would like to visit.
 
-## Dependencies
+## User stories
+As a user I want to be able to:
+-   create an account
+-   sign into my account so I can create a list of cities
+-   add a city to my list
+-   view all cities on my list
+-   remove a city from my list
+-   update information about a city on my list
+-   change my password
+-   sign out of my account so my list is no longer visible
 
-Install with `npm install`.
+## Wireframes
+[Imgur](http://i.imgur.com/mUv0GiT.jpg)
 
--   [Webpack](https://webpack.github.io)
--   [Bootstrap](http://getbootstrap.com)
--   [Handlebars.js](http://handlebarsjs.com)
+## Technologies Used
+-   HTML
+-   CSS
+-   jQuery
+-   AJAX
+-   JavaScript
+-   Handlebars.js
+-   Bootstrap
 
-At the beginning of each cohort, update the versions in
-[`package.json`](package.json) by replace all versions with a glob (`*`) and
-running `npm update --save && npm update --save-dev`. You may wish to test these
-changes by deleting the `node_modules` directory and running `npm install`.
-Fix any conflicts.
+## Approach
+1. Create simple web page using html/css
+2. Create database tables
+3. Develop API using curl scripts to confirm CRUD actions
+4. Develop client side calls for CRUD actions
+
+## Link to API repository
+https://github.com/vanduong28/project-2-trip-list-API
+
+## URL
+https://vanduong28.github.io/project-2-trip-list-client/
+
+## Future Enhancements
+I would like to be able to automatically update the list of cities after a user
+creates a city. Currently a user is required to click 'View Cities' to see the
+updated list. In addition I would like to incorporate this functionality upon
+a successful update of a city entry.
+
+## Installation
+1. Install with 'npm install'.
+2. Start with 'grunt serve'.
