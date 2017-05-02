@@ -8,6 +8,8 @@ const hideInputFields = function (event) {
   $('#city-input-fields').hide()
   $('.view-cities-button').hide()
   $('.new-city-button').hide()
+  $('.map-container').hide()
+  $('.map-button').hide()
 }
 
 const addCity = function (event) {
@@ -48,10 +50,16 @@ const onUpdateCity = function (event) {
     .catch(ui.updateCityFailure)
 }
 
+const showMap = function (event) {
+  event.preventDefault()
+  $('.map-container').toggle()
+}
+
 module.exports = {
   hideInputFields,
   addCity,
   onGetCities,
   onDeleteCity,
-  onUpdateCity
+  onUpdateCity,
+  showMap
 }

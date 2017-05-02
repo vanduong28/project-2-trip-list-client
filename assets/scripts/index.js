@@ -45,4 +45,5 @@ $(() => {
   $(document).on('click', '.removeBtn', city.onDeleteCity)
   // listen for click events on the submit update button
   $(document).on('submit', '.city-form-update', city.onUpdateCity)
+  $('#hide-show-map').on('click', city.showMap)
 })

@@ -27,11 +27,27 @@ As a user I want to be able to:
 -   Handlebars.js
 -   Bootstrap
 
-## Approach
-1. Create simple web page using html/css
-2. Create database tables
-3. Develop API using curl scripts to confirm CRUD actions
-4. Develop client side calls for CRUD actions
+## Planning and Development
+Tentative timetable:
+1. Create user stories and wireframes (~2 hours)
+2. Create database table design (~3 hours)
+3. Create simple UI using HTML/CSS/bootstrap (1 day)
+4. Create API backend (3 days)
+5. Create front end/client (2 days)
+
+I initially thought it would take me longer to build the backend API but I ended
+up struggling the most with implementing the UPDATE feature through the client.
+I was surprised I didn't encounter many issues writing the curl scripts to confirm
+changes in the database and completed the CRUD actions on the backend in less
+than 3 days.
+
+Due to time constraints I was not able to implement a third table - Trip. This
+would enable a user to create multiple Trips, each containing one to many cities.
+
+I encountered issues with retrieving modal information that was created using
+the handlebars template. Due to this I require users to close the modal and
+click 'View Cities' in order to see the updates as well as make updates to other
+city entries.
 
 ## Link to API repository
 https://github.com/vanduong28/project-2-trip-list-API
