@@ -9,17 +9,8 @@ body {
   background-image: url('http://i.imgur.com/EPvZWA2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  // max-width: 100%;
-  // height: auto;
-}
-
-.col-xs-4 {
-  background: #add8e6;
-  border: 1px solid;
-  font-size: 150px;
-  height: 200px;
-  text-align: center;
-  width: 200px;
+  background-attachment: fixed;
+  background-position: center center;
 }
 
 .game-prompt {
@@ -37,9 +28,10 @@ body {
   text-align: center;
 }
 
-.game-message {
+.user-city-message {
   font-size: 20px;
   text-align: center;
+  background:rgba(255,255,255, 0.65);
 }
 
 .btn-container {
@@ -53,7 +45,10 @@ body {
 }
 
 .content {
-  background-color: #e5e5e5;
+  background:rgba(255,255,255, 0.65);
   display: inline-block;
-  // opacity: .75;
+}
+
+.collection {
+  margin-top: 40px;
 }
