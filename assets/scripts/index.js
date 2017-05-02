@@ -24,7 +24,7 @@ $(() => {
   $('#sign-out').on('submit', auth.onSignOut)
   $('#change-password').on('submit', auth.changePassword)
   $('#city-form').on('submit', city.addCity)
-  $('.view-cities-btn').on('click', city.onGetCities)
+  $('.view-cities-button').on('click', city.onGetCities)
   // clear content in modal fields
   $('#signUp-modal').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
@@ -35,6 +35,11 @@ $(() => {
   $('#changePassword-modal').on('hidden.bs.modal', function () {
     $(this).find('form')[0].reset()
   })
+  $('#addCity-modal').on('hidden.bs.modal', function () {
+    $(this).find('form')[0].reset()
+  })
   // listen for click events on the remove button for each city entry
   $(document).on('click', '.removeBtn', city.onDeleteCity)
+  // listen for click events on the submit update button
+  $(document).on('submit', '.city-form-update', city.onUpdateCity)
 })

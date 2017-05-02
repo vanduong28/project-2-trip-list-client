@@ -5,6 +5,13 @@ h1 {
   text-align: center;
 }
 
+body {
+  background-image: url('http://i.imgur.com/EPvZWA2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  // max-width: 100%;
+  // height: auto;
+}
 
 .col-xs-4 {
   background: #add8e6;
@@ -43,5 +50,10 @@ h1 {
 .button-functions {
   margin: auto;
   text-align: right;
+}
 
+.content {
+  background-color: #e5e5e5;
+  display: inline-block;
+  // opacity: .75;
 }
