@@ -37,16 +37,17 @@ Tentative timetable:
 
 I initially thought it would take me longer to build the backend API but I ended
 up struggling the most with implementing the UPDATE feature through the client.
-I felt comfortable developing the CRUD actions for the city object in the
-backend and didn't encounter many issues writing the curl scripts to confirm
-changes in the database.
+I was surprised I didn't encounter many issues writing the curl scripts to confirm
+changes in the database and completed the CRUD actions on the backend in less
+than 3 days.
+
 Due to time constraints I was not able to implement a third table - Trip. This
 would enable a user to create multiple Trips, each containing one to many cities.
 
 I encountered issues with retrieving modal information that was created using
 the handlebars template. Due to this I require users to close the modal and
 click 'View Cities' in order to see the updates as well as make updates to other
-city entries. 
+city entries.
 
 ## Link to API repository
 https://github.com/vanduong28/project-2-trip-list-API

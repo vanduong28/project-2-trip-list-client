@@ -28,6 +28,7 @@ const signInSuccess = (data) => {
   $('#city-input-fields').show()
   $('.view-cities-button').show()
   $('.new-city-button').show()
+  $('.map-button').show()
 }
 
 const signInFailure = () => {
@@ -50,6 +51,8 @@ const signOutSuccess = () => {
   $('.view-cities-button').hide()
   $('.new-city-button').hide()
   $('#content').empty()
+  $('.map-container').hide()
+  $('.map-button').hide()
 }
 
 const signOutFailure = () => {
