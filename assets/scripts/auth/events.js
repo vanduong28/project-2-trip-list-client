@@ -11,7 +11,7 @@ const hideButtons = function (event) {
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log('sign up button clicked')
+  // console.log('sign up button clicked')
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -19,7 +19,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('sign in ran')
+  // console.log('sign in ran')
 
   const data = getFormFields(this)
   api.signIn(data)

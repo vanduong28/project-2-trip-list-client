@@ -13,10 +13,8 @@ const hideInputFields = function (event) {
 }
 
 const addCity = function (event) {
-  console.log('add button clicked')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('data is: ', data)
   api.createCity(data)
     .then(ui.createCitySuccess)
     .catch(ui.createCityFailure)
@@ -24,7 +22,6 @@ const addCity = function (event) {
 
 const onGetCities = function (event) {
   event.preventDefault()
-  console.log('view cities clicked')
   api.getCities()
     .then(ui.getCitiesSuccess)
     .catch(ui.getCitiesfailure)
@@ -32,7 +29,6 @@ const onGetCities = function (event) {
 
 const onDeleteCity = function (event) {
   event.preventDefault()
-  console.log('remove button clicked')
   const cityId = $(this).data('id')
   api.deleteCity(cityId)
     .then(ui.deleteCitySuccess(cityId))
@@ -42,9 +38,9 @@ const onDeleteCity = function (event) {
 const onUpdateCity = function (event) {
   event.preventDefault()
   const cityId = $(this).data('id')
-  console.log('update info button clicked cityId is:', cityId)
+  // console.log('update info button clicked cityId is:', cityId)
   const updateInfo = getFormFields(this)
-  console.log('updated info:', updateInfo)
+  // console.log('updated info:', updateInfo)
   api.updateCity(updateInfo, cityId)
     .then(ui.updateCitySuccess(cityId))
     .catch(ui.updateCityFailure)

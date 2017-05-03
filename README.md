@@ -36,18 +36,15 @@ Tentative timetable:
 5. Create front end/client (2 days)
 
 I initially thought it would take me longer to build the backend API but I ended
-up struggling the most with implementing the UPDATE feature through the client.
-I was surprised I didn't encounter many issues writing the curl scripts to confirm
-changes in the database and completed the CRUD actions on the backend in less
-than 3 days.
-
-Due to time constraints I was not able to implement a third table - Trip. This
-would enable a user to create multiple Trips, each containing one to many cities.
+up struggling the most with developing the client. I didn't encounter many
+issues writing the curl scripts to confirm changes in the database and completed
+the CRUD actions on the backend in less than the estimated timeframe. Majority of
+my time was spent on the front end/client - primarily on the Update functionality.
 
 I encountered issues with retrieving modal information that was created using
-the handlebars template. Due to this I require users to close the modal and
-click 'View Cities' in order to see the updates as well as make updates to other
-city entries.
+the handlebars template. Due to this I require users to close the update modal
+and click 'View Cities' in order to see the updates as well as make updates to
+other city entries.
 
 ## Link to API repository
 https://github.com/vanduong28/project-2-trip-list-API
@@ -55,11 +52,12 @@ https://github.com/vanduong28/project-2-trip-list-API
 ## URL
 https://vanduong28.github.io/project-2-trip-list-client/
 
-## Future Enhancements
-I would like to be able to automatically update the list of cities after a user
-creates a city. Currently a user is required to click 'View Cities' to see the
-updated list. In addition I would like to incorporate this functionality upon
-a successful update of a city entry.
+## Open Issues
+Update modal - when a user makes changes to fields in the Update modal and
+closes the modal by clicking on the 'x' instead of submitting the updates, when
+the modal is reopened the changes previously made are still present. The changes
+are not committed to the database and doesn't cause issues but is a poor user
+experience.
 
 ## Installation
 1. Install with 'npm install'.
