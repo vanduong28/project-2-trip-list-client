@@ -2,7 +2,7 @@
 const store = require('../store')
 
 const signUpSuccess = () => {
-  console.log('sign up success')
+  // console.log('sign up success')
   $('#signUp-modal').modal('hide')
   $('.game-prompt').hide()
   $('.sign-up-btn').hide()
@@ -11,11 +11,11 @@ const signUpSuccess = () => {
 }
 
 const signUpFailure = () => {
-  console.error('sign up failure')
+  // console.error('sign up failure')
   $('#sign-up-modal-label').text('Error with sign up. Please try again.')
 }
 const signInSuccess = (data) => {
-  console.log('signIn success ran. data is: ', data)
+  // console.log('signIn success ran. data is: ', data)
   store.user = data.user
   $('#sign-in-modal-label').text('Sign In')
   $('#signIn-modal').modal('hide')

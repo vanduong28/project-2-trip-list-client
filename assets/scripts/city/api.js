@@ -1,11 +1,9 @@
 'use strict'
 
 const config = require('../config')
-// const app = require('../app')
 const store = require('../store')
 
 const createCity = (data) => {
-  console.log('new city created. data is:', data)
   return $.ajax({
     url: config.apiOrigin + '/cities',
     method: 'POST',
@@ -37,7 +35,6 @@ const deleteCity = function (id) {
 }
 
 const updateCity = (data, id) => {
-  console.log('update city to server.')
   return $.ajax({
     url: config.apiOrigin + '/cities/' + id,
     method: 'PATCH',
